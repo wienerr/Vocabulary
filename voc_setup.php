@@ -275,4 +275,26 @@ jQuery( document ).ready( function($) {
   $("#tzoffset").val(tzdiff);
 });   
 
+ //for mobile device needs to change orientation
+	
+//This code reloads the page when the orientation changes	
+jQuery(window).on("orientationchange",function(){
+	location.reload();
+});
+
+// this code when the page loaded measures the state of the screen
+// if it is portrait it alerts to change to landscape and hides the content.
+if(screen.availHeight > screen.availWidth){
+    jQuery( ".content" ).css( "display", "none" );
+	var newLine = "\r\n"
+    var msg = "Please use Landscape!"
+    msg += newLine;
+    msg += "(Turn your phone 90 degrees)";
+    msg += newLine;
+    msg += "and wait a second,";	
+    msg += newLine;
+    msg += "for the page to reload.";	
+    alert(msg);
+}
+	
 </script>
